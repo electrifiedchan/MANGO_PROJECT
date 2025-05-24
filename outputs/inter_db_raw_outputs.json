@@ -61,37 +61,5 @@
         "storage": [16, 64, 128]
       }
     ]
-  },
-  "verification_queries": {
-    "total_documents": {
-      "query": "db.devices.countDocuments({})",
-      "result": 5
-    },
-    "documents_with_price": {
-      "query": "db.devices.countDocuments({ price: { $exists: true } })",
-      "result": 5
-    },
-    "documents_with_profit": {
-      "query": "db.devices.countDocuments({ profit: { $exists: true } })",
-      "result": 0
-    },
-    "documents_price_gt_699": {
-      "query": "db.devices.countDocuments({ price: { $gt: 699 } })",
-      "result": 3
-    }
-  },
-  "price_analysis": {
-    "all_prices": [
-      { "name": "Vivo", "price": 599, "included_in_query_18": false },
-      { "name": "Samsung", "price": 699, "included_in_query_18": false },
-      { "name": "IPhone", "price": 799, "included_in_query_18": true },
-      { "name": "xTablet", "price": 899, "included_in_query_18": true },
-      { "name": "Redmi Note", "price": 899, "included_in_query_18": true }
-    ],
-    "min_price": 599,
-    "max_price": 899,
-    "average_price": 739.2,
-    "devices_above_699": 3,
-    "devices_at_or_below_699": 2
   }
 }
