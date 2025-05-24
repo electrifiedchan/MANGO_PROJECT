@@ -311,42 +311,4 @@
       }
     ]
   },
-  "verification_queries": {
-    "total_documents": {
-      "query": "db.students.countDocuments({})",
-      "result": 6
-    },
-    "documents_male": {
-      "query": "db.students.countDocuments({ Gender: 'Male' })",
-      "result": 3
-    },
-    "documents_female": {
-      "query": "db.students.countDocuments({ Gender: 'Female' })",
-      "result": 3
-    },
-    "students_under_15": {
-      "query": "db.students.countDocuments({ age: { $lt: 15 } })",
-      "result": 3
-    },
-    "students_high_grades": {
-      "query": "db.students.countDocuments({ grd_point: { $gte: 36 } })",
-      "result": 1
-    }
-  },
-  "student_analysis": {
-    "gender_distribution": {
-      "male": 3,
-      "female": 3
-    },
-    "age_range": {
-      "min_age": 11,
-      "max_age": 19,
-      "average_age": 15
-    },
-    "grade_range": {
-      "min_grade": 30,
-      "max_grade": 36.2514,
-      "average_grade": 34.15
-    }
-  }
-}
+  
