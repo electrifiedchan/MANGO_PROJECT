@@ -1,0 +1,17 @@
+use('inter');
+
+// QUERY 16: Find Price Field Exists In Document, If Exists Display Name And Price
+db.devices.find(
+  { price: { $exists: true } },
+  { name: 1, price: 1, _id: 0 }
+);
+
+// QUERY 17: Check If Profit Field Exists, It Does Not Exist, Hence Output Will Be [] Blank
+db.devices.find(
+  { profit: { $exists: true } }
+);
+
+// QUERY 18: Find price field exists in document and price > 699
+db.devices.find(
+  { price: { $gt: 699 } }
+);

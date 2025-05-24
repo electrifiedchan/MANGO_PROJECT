@@ -1,0 +1,32 @@
+{
+  "name": "mango-mongodb-project",
+  "version": "1.0.0",
+  "description": "MongoDB project demonstrating device data management and query operations with field existence checks and conditional filtering",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "mongodb",
+    "database",
+    "queries",
+    "nosql",
+    "devices",
+    "data-management"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mango-mongodb-project.git"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.15.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

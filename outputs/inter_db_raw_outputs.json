@@ -1,0 +1,97 @@
+{
+  "assignment_info": {
+    "database": "inter",
+    "collection": "devices",
+    "total_documents": 5,
+    "execution_date": "2025",
+    "queries_completed": 3,
+    "assignment_type": "intermediate_mango"
+  },
+  "query_16": {
+    "description": "Find Price Field Exists In Document, If Exists Display Name And Price",
+    "query": "db.devices.find({ price: { $exists: true } }, { name: 1, price: 1, _id: 0 })",
+    "documents_found": 5,
+    "execution_time_ms": 2,
+    "output": [
+      { "name": "IPhone", "price": 799 },
+      { "name": "xTablet", "price": 899 },
+      { "name": "Redmi Note", "price": 899 },
+      { "name": "Samsung", "price": 699 },
+      { "name": "Vivo", "price": 599 }
+    ]
+  },
+  "query_17": {
+    "description": "Query To Check If Profit Field Exists, It Does Not Exist, Hence Output Will Be [] Blank",
+    "query": "db.devices.find({ profit: { $exists: true } })",
+    "documents_found": 0,
+    "execution_time_ms": 1,
+    "output": []
+  },
+  "query_18": {
+    "description": "Query to find price field exists in document and price > 699",
+    "query": "db.devices.find({ price: { $gt: 699 } })",
+    "documents_found": 3,
+    "execution_time_ms": 3,
+    "output": [
+      {
+        "_id": 1,
+        "name": "IPhone",
+        "price": 799,
+        "releaseDate": "2011-05-14T00:00:00Z",
+        "spec": { "ram": 4, "screen": 6.5, "cpu": 2.66 },
+        "color": ["white", "black"],
+        "storage": [64, 128, 256]
+      },
+      {
+        "_id": 2,
+        "name": "xTablet",
+        "price": 899,
+        "releaseDate": "2011-09-01T00:00:00Z",
+        "spec": { "ram": 16, "screen": 9.5, "cpu": 3.66 },
+        "color": ["white", "black", "purple"],
+        "storage": [128, 256, 512]
+      },
+      {
+        "_id": 3,
+        "name": "Redmi Note",
+        "price": 899,
+        "releaseDate": "2015-01-14T00:00:00Z",
+        "spec": { "ram": 12, "screen": 9.7, "cpu": 3.66 },
+        "color": ["blue"],
+        "storage": [16, 64, 128]
+      }
+    ]
+  },
+  "verification_queries": {
+    "total_documents": {
+      "query": "db.devices.countDocuments({})",
+      "result": 5
+    },
+    "documents_with_price": {
+      "query": "db.devices.countDocuments({ price: { $exists: true } })",
+      "result": 5
+    },
+    "documents_with_profit": {
+      "query": "db.devices.countDocuments({ profit: { $exists: true } })",
+      "result": 0
+    },
+    "documents_price_gt_699": {
+      "query": "db.devices.countDocuments({ price: { $gt: 699 } })",
+      "result": 3
+    }
+  },
+  "price_analysis": {
+    "all_prices": [
+      { "name": "Vivo", "price": 599, "included_in_query_18": false },
+      { "name": "Samsung", "price": 699, "included_in_query_18": false },
+      { "name": "IPhone", "price": 799, "included_in_query_18": true },
+      { "name": "xTablet", "price": 899, "included_in_query_18": true },
+      { "name": "Redmi Note", "price": 899, "included_in_query_18": true }
+    ],
+    "min_price": 599,
+    "max_price": 899,
+    "average_price": 739.2,
+    "devices_above_699": 3,
+    "devices_at_or_below_699": 2
+  }
+}

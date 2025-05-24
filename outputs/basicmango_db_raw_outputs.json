@@ -1,0 +1,352 @@
+{
+  "assignment_info": {
+    "database": "basicmango_db",
+    "collection": "students",
+    "total_documents": 6,
+    "execution_date": "2024",
+    "queries_completed": 8,
+    "assignment_type": "basic_mango"
+  },
+  "query_29": {
+    "description": "Display Records Where Gender Is Female or Age >=20, Use OR Operator",
+    "query": "db.students.find({ $or: [{ Gender: 'Female' }, { age: { $gte: 20 } }] })",
+    "documents_found": 3,
+    "execution_time_ms": 2,
+    "output": [
+      {
+        "_id": 2,
+        "std_name": "Dechamma",
+        "Gender": "Female",
+        "class": "VI",
+        "age": 13,
+        "grd_point": 30
+      },
+      {
+        "_id": 4,
+        "std_name": "Geetha",
+        "Gender": "Female",
+        "class": "X",
+        "age": 17,
+        "grd_point": 36.2514
+      },
+      {
+        "_id": 5,
+        "std_name": "Bhomika",
+        "Gender": "Female",
+        "class": "X",
+        "age": 19,
+        "grd_point": 35.5201
+      }
+    ]
+  },
+  "query_30": {
+    "description": "Display Records Where grd_point >=36, or Gender=Male, Use OR Operator",
+    "query": "db.students.find({ $or: [{ grd_point: { $gte: 36 } }, { Gender: 'Male' }] })",
+    "documents_found": 4,
+    "execution_time_ms": 2,
+    "output": [
+      {
+        "_id": 1,
+        "std_name": "Mukesh",
+        "Gender": "Male",
+        "class": "VI",
+        "age": 11,
+        "grd_point": 33
+      },
+      {
+        "_id": 3,
+        "std_name": "Akash",
+        "Gender": "Male",
+        "class": "V",
+        "age": 14,
+        "grd_point": 35.1257
+      },
+      {
+        "_id": 4,
+        "std_name": "Geetha",
+        "Gender": "Female",
+        "class": "X",
+        "age": 17,
+        "grd_point": 36.2514
+      },
+      {
+        "_id": 6,
+        "std_name": "Nitin",
+        "Gender": "Male",
+        "class": "V",
+        "age": 16,
+        "grd_point": 35.5201
+      }
+    ]
+  },
+  "query_31": {
+    "description": "Demonstrate NOT Operator ie Opposite of Age>=15",
+    "query": "db.students.find({ age: { $not: { $gte: 15 } } })",
+    "documents_found": 3,
+    "execution_time_ms": 1,
+    "output": [
+      {
+        "_id": 1,
+        "std_name": "Mukesh",
+        "Gender": "Male",
+        "class": "VI",
+        "age": 11,
+        "grd_point": 33
+      },
+      {
+        "_id": 2,
+        "std_name": "Dechamma",
+        "Gender": "Female",
+        "class": "VI",
+        "age": 13,
+        "grd_point": 30
+      },
+      {
+        "_id": 3,
+        "std_name": "Akash",
+        "Gender": "Male",
+        "class": "V",
+        "age": 14,
+        "grd_point": 35.1257
+      }
+    ]
+  },
+  "query_32": {
+    "description": "Demonstrate Not Operator. Display Records Where Gender Not Equal To Female",
+    "query": "db.students.find({ Gender: { $ne: 'Female' } })",
+    "documents_found": 3,
+    "execution_time_ms": 1,
+    "output": [
+      {
+        "_id": 1,
+        "std_name": "Mukesh",
+        "Gender": "Male",
+        "class": "VI",
+        "age": 11,
+        "grd_point": 33
+      },
+      {
+        "_id": 3,
+        "std_name": "Akash",
+        "Gender": "Male",
+        "class": "V",
+        "age": 14,
+        "grd_point": 35.1257
+      },
+      {
+        "_id": 6,
+        "std_name": "Nitin",
+        "Gender": "Male",
+        "class": "V",
+        "age": 16,
+        "grd_point": 35.5201
+      }
+    ]
+  },
+  "query_33": {
+    "description": "Demonstrate NOR Operator",
+    "query": "db.students.find({ $nor: [{ Gender: 'Female' }, { age: { $gte: 15 } }] })",
+    "documents_found": 2,
+    "execution_time_ms": 1,
+    "output": [
+      {
+        "_id": 1,
+        "std_name": "Mukesh",
+        "Gender": "Male",
+        "class": "VI",
+        "age": 11,
+        "grd_point": 33
+      },
+      {
+        "_id": 3,
+        "std_name": "Akash",
+        "Gender": "Male",
+        "class": "V",
+        "age": 14,
+        "grd_point": 35.1257
+      }
+    ]
+  },
+  "query_34": {
+    "description": "Demonstrate Not Operator Along with In Operator --Age Not In [16,11]",
+    "query": "db.students.find({ age: { $nin: [16, 11] } })",
+    "documents_found": 4,
+    "execution_time_ms": 1,
+    "output": [
+      {
+        "_id": 2,
+        "std_name": "Dechamma",
+        "Gender": "Female",
+        "class": "VI",
+        "age": 13,
+        "grd_point": 30
+      },
+      {
+        "_id": 3,
+        "std_name": "Akash",
+        "Gender": "Male",
+        "class": "V",
+        "age": 14,
+        "grd_point": 35.1257
+      },
+      {
+        "_id": 4,
+        "std_name": "Geetha",
+        "Gender": "Female",
+        "class": "X",
+        "age": 17,
+        "grd_point": 36.2514
+      },
+      {
+        "_id": 5,
+        "std_name": "Bhomika",
+        "Gender": "Female",
+        "class": "X",
+        "age": 19,
+        "grd_point": 35.5201
+      }
+    ]
+  },
+  "query_35": {
+    "description": "Demonstrate Not Operator Along With In Operator ie Age != 11",
+    "query": "db.students.find({ age: { $ne: 11 } })",
+    "documents_found": 5,
+    "execution_time_ms": 1,
+    "output": [
+      {
+        "_id": 2,
+        "std_name": "Dechamma",
+        "Gender": "Female",
+        "class": "VI",
+        "age": 13,
+        "grd_point": 30
+      },
+      {
+        "_id": 3,
+        "std_name": "Akash",
+        "Gender": "Male",
+        "class": "V",
+        "age": 14,
+        "grd_point": 35.1257
+      },
+      {
+        "_id": 4,
+        "std_name": "Geetha",
+        "Gender": "Female",
+        "class": "X",
+        "age": 17,
+        "grd_point": 36.2514
+      },
+      {
+        "_id": 5,
+        "std_name": "Bhomika",
+        "Gender": "Female",
+        "class": "X",
+        "age": 19,
+        "grd_point": 35.5201
+      },
+      {
+        "_id": 6,
+        "std_name": "Nitin",
+        "Gender": "Male",
+        "class": "V",
+        "age": 16,
+        "grd_point": 35.5201
+      }
+    ]
+  },
+  "query_36": {
+    "description": "Demonstrate Not Operator Along With Less Than Operator –(! grd_point < 29)",
+    "query": "db.students.find({ grd_point: { $not: { $lt: 29 } } })",
+    "documents_found": 6,
+    "execution_time_ms": 1,
+    "output": [
+      {
+        "_id": 1,
+        "std_name": "Mukesh",
+        "Gender": "Male",
+        "class": "VI",
+        "age": 11,
+        "grd_point": 33
+      },
+      {
+        "_id": 2,
+        "std_name": "Dechamma",
+        "Gender": "Female",
+        "class": "VI",
+        "age": 13,
+        "grd_point": 30
+      },
+      {
+        "_id": 3,
+        "std_name": "Akash",
+        "Gender": "Male",
+        "class": "V",
+        "age": 14,
+        "grd_point": 35.1257
+      },
+      {
+        "_id": 4,
+        "std_name": "Geetha",
+        "Gender": "Female",
+        "class": "X",
+        "age": 17,
+        "grd_point": 36.2514
+      },
+      {
+        "_id": 5,
+        "std_name": "Bhomika",
+        "Gender": "Female",
+        "class": "X",
+        "age": 19,
+        "grd_point": 35.5201
+      },
+      {
+        "_id": 6,
+        "std_name": "Nitin",
+        "Gender": "Male",
+        "class": "V",
+        "age": 16,
+        "grd_point": 35.5201
+      }
+    ]
+  },
+  "verification_queries": {
+    "total_documents": {
+      "query": "db.students.countDocuments({})",
+      "result": 6
+    },
+    "documents_male": {
+      "query": "db.students.countDocuments({ Gender: 'Male' })",
+      "result": 3
+    },
+    "documents_female": {
+      "query": "db.students.countDocuments({ Gender: 'Female' })",
+      "result": 3
+    },
+    "students_under_15": {
+      "query": "db.students.countDocuments({ age: { $lt: 15 } })",
+      "result": 3
+    },
+    "students_high_grades": {
+      "query": "db.students.countDocuments({ grd_point: { $gte: 36 } })",
+      "result": 1
+    }
+  },
+  "student_analysis": {
+    "gender_distribution": {
+      "male": 3,
+      "female": 3
+    },
+    "age_range": {
+      "min_age": 11,
+      "max_age": 19,
+      "average_age": 15
+    },
+    "grade_range": {
+      "min_grade": 30,
+      "max_grade": 36.2514,
+      "average_grade": 34.15
+    }
+  }
+}

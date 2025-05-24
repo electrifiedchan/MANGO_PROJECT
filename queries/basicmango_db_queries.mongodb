@@ -1,0 +1,50 @@
+use('basicmango_db');
+
+// QUERY 29: Display Records Where Gender Is Female or Age >=20, Use OR Operator
+db.students.find({
+  $or: [
+    { Gender: "Female" },
+    { age: { $gte: 20 } }
+  ]
+});
+
+// QUERY 30: Display Records Where grd_point >=36, or Gender=Male, Use OR Operator
+db.students.find({
+  $or: [
+    { grd_point: { $gte: 36 } },
+    { Gender: "Male" }
+  ]
+});
+
+// QUERY 31: Demonstrate NOT Operator ie Opposite of Age>=15
+db.students.find({
+  age: { $not: { $gte: 15 } }
+});
+
+// QUERY 32: Demonstrate Not Operator. Display Records Where Gender Not Equal To Female
+db.students.find({
+  Gender: { $ne: "Female" }
+});
+
+// QUERY 33: Demonstrate NOR Operator
+db.students.find({
+  $nor: [
+    { Gender: "Female" },
+    { age: { $gte: 15 } }
+  ]
+});
+
+// QUERY 34: Demonstrate Not Operator Along with In Operator --Age Not In [16,11]
+db.students.find({
+  age: { $nin: [16, 11] }
+});
+
+// QUERY 35: Demonstrate Not Operator Along With In Operator ie Age != 11
+db.students.find({
+  age: { $ne: 11 }
+});
+
+// QUERY 36: Demonstrate Not Operator Along With Less Than Operator –(! grd_point < 29)
+db.students.find({
+  grd_point: { $not: { $lt: 29 } }
+});
